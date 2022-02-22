@@ -2,34 +2,31 @@ let firstNum = "";
 let secondNum = "";
 let op = "";
 let result = "";
+let display = "";
 let onSecond = false;
 
 function add() {
   const num1 = parseInt(firstNum, 10);
   const num2 = parseInt(secondNum, 10);
-  let res = num1 + num2;
-  console.log(res);
+  result = num1 + num2;
 }
 
 function sub() {
   const num1 = parseInt(firstNum, 10);
   const num2 = parseInt(secondNum, 10);
-  let res = num1 - num2;
-  console.log(res);
+  result = num1 - num2;
 }
 
 function mult() {
   const num1 = parseInt(firstNum, 10);
   const num2 = parseInt(secondNum, 10);
-  let res = num1 * num2;
-  console.log(res);
+  result = num1 * num2;
 }
 
 function div() {
   const num1 = parseInt(firstNum, 10);
   const num2 = parseInt(secondNum, 10);
-  let res = num1 / num2;
-  console.log(res);
+  result = num1 / num2;
 }
 
 function operate() {
@@ -42,6 +39,7 @@ function operate() {
   } else if (op === "/") {
     div();
   }
+  document.getElementById("display").innerHTML = result;
 }
 
 function setOperator(operator) {
@@ -52,7 +50,9 @@ function setOperator(operator) {
 function getInput(num) {
   if (!onSecond) {
     firstNum = firstNum + num;
+    document.getElementById("display").innerHTML = firstNum;
   } else {
     secondNum = secondNum + num;
+    document.getElementById("display").innerHTML = secondNum;
   }
 }
