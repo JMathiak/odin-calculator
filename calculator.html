@@ -12,19 +12,19 @@
     <div class="calc-container">
         <div>
         <div id="display">
-           
+           0
         </div>
         <div class="row">
-            <button>AC</button>
+            <button onClick = 'allClear()'>AC</button>
             <button>+/-</button>
             <button>%</button>
-            <button>/</button>
+            <button onClick = 'setOperator("/")'>/</button>
         </div>
         <div class="row">
             <button onClick = 'getInput("7")'>7</button>
             <button onClick = 'getInput("8")'>8</button>
             <button onClick = 'getInput("9")'>9</button>
-            <button>*</button>
+            <button onClick = 'setOperator("*")'>*</button>
         </div>
         <div class="row">
             <button onClick = 'getInput("4")'>4</button>
@@ -40,7 +40,7 @@
         </div>
         <div class="row">
             <button onClick = 'getInput("0")'>0</button>
-            <button>.</button>
+            <button onClick = 'getInput(".")'>.</button>
             <button onClick="operate()">=</button>
         </div>
     </div>
