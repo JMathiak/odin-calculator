@@ -47,38 +47,51 @@ function mult() {
 }
 
 function div() {
-  const num1 = parseFloat(firstNum, 10);
-  const num2 = parseFloat(secondNum, 10);
-  result = num1 / num2;
-  let res = result.toFixed(2);
-  result = res;
+  if (secondNum !== "0") {
+    const num1 = parseFloat(firstNum, 10);
+    const num2 = parseFloat(secondNum, 10);
+    result = num1 / num2;
+    let res = result.toFixed(2);
+    result = res;
 
-  if (result % 1 === 0) {
-    let res = result;
-    result = parseInt(res);
+    if (result % 1 === 0) {
+      let res = result;
+      result = parseInt(res);
+    }
+  } else {
+    result = "ERR!";
   }
 }
 
 function operate() {
-  if (op === "+") {
-    add();
-  } else if (op === "-") {
-    sub();
-  } else if (op === "*") {
-    mult();
-  } else if (op === "/") {
-    div();
+  if (op !== "") {
+    if (op === "+") {
+      add();
+    } else if (op === "-") {
+      sub();
+    } else if (op === "*") {
+      mult();
+    } else if (op === "/") {
+      div();
+    }
+    document.getElementById("display").innerHTML = result;
+    if (result !== "ERR!") {
+      firstNum = result;
+      inEquation = true;
+      onSecond = false;
+    } else {
+      firstNum = "0";
+      inEquation = false;
+      onSecond = false;
+    }
   }
-  document.getElementById("display").innerHTML = result;
-  firstNum = result;
-  inEquation = true;
-  onSecond = false;
 }
 
 function setOperator(operator) {
   op = operator;
   onSecond = true;
   hasDec = false;
+  document.getElementById("decimal").disabled = false;
 }
 
 function getInput(num) {
@@ -99,6 +112,7 @@ function getInput(num) {
   }
   if (num === ".") {
     hasDec = true;
+    document.getElementById("decimal").disabled = true;
   }
 }
 
@@ -110,3 +124,9 @@ function allClear() {
   onSecond = false;
   hasDec = false;
 }
+
+/* To Do:
+ *Add negative functionality
+ *Add percent functionality
+ *Reformat decimal functionality
+ */

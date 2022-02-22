@@ -10,3 +10,17 @@
   border: black 1px solid;
   text-align: right;
 }
+
+button {
+  height: 50px;
+  width: 50px;
+  margin: 0;
+}
+
+.row {
+  font-size: 0;
+}
+
+button {
+  font-size: 14px;
+}
