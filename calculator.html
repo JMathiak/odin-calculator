@@ -4,44 +4,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Calculator</title>
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="calc-container">
-        <div>
+    <div class="container">
+        <div class="calc-container">
         <div id="display">
            0
         </div>
         <div class="row">
             <button onClick = 'allClear()'>AC</button>
-            <button>+/-</button>
-            <button>%</button>
-            <button onClick = 'setOperator("/")'>/</button>
+            <button id="symbol">+/-</button>
+            <button id="symbol">%</button>
+            <button id="symbol" onClick = 'setOperator("/")'>/</button>
         </div>
         <div class="row">
             <button onClick = 'getInput("7")'>7</button>
             <button onClick = 'getInput("8")'>8</button>
             <button onClick = 'getInput("9")'>9</button>
-            <button onClick = 'setOperator("*")'>*</button>
+            <button id="symbol" onClick = 'setOperator("*")'>*</button>
         </div>
         <div class="row">
             <button onClick = 'getInput("4")'>4</button>
             <button onClick = 'getInput("5")'>5</button>
             <button onClick = 'getInput("6")'>6</button>
-            <button>-</button>
+            <button id="symbol" onClick = 'setOperator("-")'>-</button>
         </div>
         <div class="row">
             <button onClick = 'getInput("1")'>1</button>
             <button onClick = 'getInput("2")'>2</button>
             <button onClick = 'getInput("3")'>3</button>
-            <button onClick = 'setOperator("+")'>+</button>
+            <button id="symbol" onClick = 'setOperator("+")'>+</button>
         </div>
         <div class="row">
-            <button onClick = 'getInput("0")'>0</button>
-            <button id = "decimal "onClick = 'getInput(".")'>.</button>
-            <button onClick="operate()">=</button>
+            <button id = "zero" onClick = 'getInput("0")'>0</button>
+            <button id="symbol" id = "decimal "onClick = 'getInput(".")'>.</button>
+            <button id="symbol" onClick="operate()">=</button>
         </div>
     </div>
 </div>
